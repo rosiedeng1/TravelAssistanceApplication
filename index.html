@@ -73,24 +73,35 @@
                         </select>
                     </div>
 
-                  </div>
-                    </div>
                 </div>
-
             </div>
         </div>
-    <div>
 
-        <!-- Created fetch-button Id -->
-<button class="btn button is-primary is-outlined" id="fetch-button">
-    Go!
-</button>
+    </div>
 
-<h4 class="subtitle"> Last 3 Conversions
-<span id="country-search-term"></span>
-</h4>
-<!-- Created currency container Id -->
-<div id="cuurency-container" class="list-group"></div>
+    <!-- Created fetch-button Id -->
+    <button class="button is-primary is-outlined" id="fetch-button">
+        Go!
+    </button>
+
+    <h4 class="subtitle"> Last 3 Conversions
+        <!-- <span id="country-search-term"></span> -->
+    </h4>
+
+    <!-- Added 2 columns for local storage -->
+    <div class="columns is-gapless">
+            <!-- Created currency container Id -->
+    <div id="currency-container" class="list-group"></div>
+        <div class="column localstorage">
+            Currency 1
+        </div>
+        <div class="column localstorage">
+            Currency 2
+        </div>
+    </div>
+
+
+
 </main>
 
 <script src="./assets/script.js"></script>

@@ -9,16 +9,11 @@ body {
     font-size: 35px;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-}
-
-div {
+/* div {
   column-count: 2;
   display: flex;
   justify-content: center;
-}
+} */
 
 .CountryFrom, .CountryTo{
   border: 5px solid grey;
@@ -27,3 +22,19 @@ div {
   margin: 100px;
 
 }
+
+
+h4 {
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Papyrus';
+}
+
+.localstorage {
+  border: 3px solid grey;
+  display: flex; 
+  flex-direction: column;
+  width: 70%;
+
+}
+
