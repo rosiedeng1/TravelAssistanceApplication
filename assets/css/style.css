@@ -6,9 +6,24 @@ body {
   h1{
     display: flex;
     justify-content: center;
+    font-size: 35px;
 }
 
 .btn {
   display: flex;
   justify-content: center;
+}
+
+div {
+  column-count: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.CountryFrom, .CountryTo{
+  border: 5px solid grey;
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+
 }
