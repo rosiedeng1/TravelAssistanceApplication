@@ -24,8 +24,9 @@
 
 <main>
     <!-- Added 2 columns for CountryFrom and CountryTo -->
+    <!-- Added id for dropdown and flag -->
     <div class="columns">
-        <div class="column CountryFrom">
+        <div id="from-currency-select" id="country-from-flag" class="column CountryFrom">
             <h2> Country you're currently coming from:</h2>
             <div class="field has-addons">
                 <div class="control is-expanded">
@@ -50,8 +51,8 @@
             </div>
         </div>
 
-
-        <div class="column CountryTo">
+        <!-- Added id for dropdown and flag-->
+        <div id="to-currency-select" id="country-to-flag" class="column CountryTo">
             <h3> Country you're going to</h3>
             <div class="field has-addons">
                 <div class="control is-expanded">
@@ -91,7 +92,7 @@
     <!-- Added 2 columns for local storage -->
     <div class="columns is-gapless">
             <!-- Created currency container Id -->
-    <div id="currency-container" class="list-group"></div>
+    <div id="curency-container" class="list-group"></div>
         <div class="column localstorage">
             Currency 1
         </div>
