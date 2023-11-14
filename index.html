@@ -16,7 +16,7 @@
 <header class="hero is-link">
     <div class="hero-body">
         <h1 class="traveltitle">
-            <i>Currency Conversion for Travellers :)</i>
+            <i>Currency Conversion for Travelers :)</i>
         </h1>
     </div>
 </header>
@@ -29,74 +29,40 @@
 
     <!-- Added 2 columns for CountryFrom and CountryTo -->
     <!-- Added id for dropdown and flag -->
-    <div class="columns">
-        <div id="from-currency-select" id="country-from-flag" class="column CountryFrom">
-            <h2> Country you're currently coming from:</h2>
-            <div class="field has-addons">
-                <div class="control is-expanded">
-                    <div class="select is-info">
-                        <select name="country">
-                            <option selected>Country</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Bolivia">Bolivia</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Ecuador">Ecuador</option>
-                            <option value="Guyana">Guyana</option>
-                            <option value="Paraguay">Paraguay</option>
-                            <option value="Peru">Peru</option>
-                            <option value="Suriname">Suriname</option>
-                            <option value="Uruguay">Uruguay</option>
-                            <option value="Venezuela">Venezuela</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+ 
+    <div class="columns dropdowns">
+        <div class="column">
+            <label for="amount">Enter the Amount:</label>
+            <input type="number" id="amount" value="100" />
+            <h3> Country you're currently coming from:</h3>
+            <select id="from-currency-select"></select>
         </div>
 
-        <!-- Added id for dropdown and flag-->
-        <div id="to-currency-select" id="country-to-flag" class="column CountryTo">
-            <h3> Country you're going to</h3>
-            <div class="field has-addons">
-                <div class="control is-expanded">
-                    <div class="select is-info">
-                        <select name="country">
-                            <option selected>Country</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Bolivia">Bolivia</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Ecuador">Ecuador</option>
-                            <option value="Guyana">Guyana</option>
-                            <option value="Paraguay">Paraguay</option>
-                            <option value="Peru">Peru</option>
-                            <option value="Suriname">Suriname</option>
-                            <option value="Uruguay">Uruguay</option>
-                            <option value="Venezuela">Venezuela</option>
-                        </select>
-                    </div>
-
-                </div>
-            </div>
+        <div class="column">
+            <h4> Country you're currently going to:</h4>
+            <select id="to-currency-select"></select>
+            <p class="result" id="result"></p>
         </div>
+        </div>
+    </div>
 
+    <div class="button">
+    <button type="submit" class="button is-primary is-medium" id="fetch-button">Convert</button>
     </div>
 
     <!-- Created fetch-button Id -->
     <button class="button is-primary is-outlined" id="fetch-button">
-        Convert!
+        Go!
     </button>
 
     <h4 class="subtitle"> Last 3 Conversions
         <!-- <span id="country-search-term"></span> -->
-    </h4>
+    </h5>
 
     <!-- Added 2 columns for local storage -->
     <div class="columns is-gapless">
-            <!-- Created currency container Id -->
-    <div id="curency-container" class="list-group"></div>
+        <!-- Created currency container Id -->
+        <div id="curency-container" class="list-group"></div>
         <div class="column localstorage">
             Currency 1
         </div>
@@ -109,6 +75,4 @@
 
 </main>
 
-<script src="./assets/currency_code.js"></script>
-<script src="./assets/api_key.js"></script>
 <script src="./assets/script.js"></script>
