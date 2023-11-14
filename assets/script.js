@@ -65,7 +65,7 @@ if(amount.length != 0) {
   //console.log(getLast3FromLocalStorage);
   getLast3FromLocalStorage();
 
-
+//forloop transaction[amountfrom], transaction.amountFrom
 
     });
 
@@ -75,15 +75,9 @@ if(amount.length != 0) {
     alert("Please fill in the amount");
 }
 
-
-
-
-
-
 };
 
 document.querySelector("#fetch-button").addEventListener("click", convertCurrency);
 window.addEventListener("load", convertCurrency);
 
 
-// Local Storage
