@@ -15,7 +15,7 @@ body {
   justify-content: center;
 } */
 
-.CountryFrom, .CountryTo{
+.column{
   border: 5px solid grey;
   display: flex;
   flex-direction: column;
@@ -23,8 +23,7 @@ body {
 
 }
 
-
-button, h4 {
+h4 {
   font-weight: bold;
   text-align: center;
   font-family: 'Papyrus';
@@ -38,3 +37,18 @@ button, h4 {
 
 }
 
+.column {
+  border: 3px solid grey;
+  margin: 50px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.result {
+  font-size: 25px;
+}
