@@ -2,21 +2,24 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>TravelAssistanceApplication</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <!-- Using bulma for the CSS framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">"
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>TravelAssistanceApplication</title>
 </head>
 
-<body class="flex-column min-100-vh">
-  <header class="hero">
-    <h1 class="traveltitle">
-      <i>Currency Conversion for Travellers :)</i>
-    </h1>
-  </header>
+<!-- Styled hero for title -->
+<header class="hero is-link">
+  <div class="hero-body">
+      <h1 class="traveltitle">
+          <i>Currency Conversion for Travellers :)</i>
+      </h1>
+  </div>
+</header>
 
 
   <main class="flex-row justify-space-between">
@@ -24,11 +27,16 @@
 
       <div class="card">
         <h3 class="card-header">Type where you are going and coming from below:</h3>
-        <!-- Created ID for user input of the country name -->
-          <input name="countryname" id="countryname" type="text" autofocus="true" class="form-input" />
-          <input name="countryname" id="countryname" type="text" autofocus="true" class="form-input" />
+        <!-- Created form for user input of the amount -->
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" value="100"/>
+          <div class="dropdowns">
+          <select id = "from-currency-select"></select>
+          <select id = "to-currency-select"></select>
+          </div>
           <!-- Created fetch-button Id -->
-          <button type="submit" class="btn" id="fetch-button">Go!</button>
+          <button type="submit" class="btn" id="fetch-button">Convert</button>
+          <p id="result"></p>
         </form>
       </div>
 
@@ -36,8 +44,13 @@
         <h2 class="subtitle"> text
             <span id="city-search-term"></span></h2>
         <!-- Created currency container Id -->
-        <div id="cuurency-container" class="list-group"></div>
+        <div id="curency-container" class="list-group"></div>
       </div>
     </main>
 
+      <!--Script with list of currency codes-->
+      <script src="./assets/currency_code.js"></script>
+      <!--Script with connection to API key-->
+      <script src="./assets/api_key.js"></script>
+      <!--Main script-->
       <script src="./assets/script.js"></script>
