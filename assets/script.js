@@ -1,21 +1,22 @@
 let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 const fromDropDown = document.getElementById("from-currency-select");
 const toDropDown = document.getElementById("to-currency-select");
+var conversions = document.getElementById("conversion-container")
 
 // Dropdown for the Base currencies array
 currencies_abrev.forEach((currency) => {
-    const option = document.createElement("option");
-    option.value = Object.values(currency);
-    option.text = Object.keys(currency)[0];
-    fromDropDown.add(option);
+  const option = document.createElement("option");
+  option.value = Object.values(currency);
+  option.text = Object.keys(currency)[0];
+  fromDropDown.add(option);
 })
 
 // Dropdown for the End currencies array
 currencies_abrev.forEach((currency) => {
-    const option = document.createElement("option");
-    option.value = Object.values(currency);
-    option.text = Object.keys(currency)[0];
-    toDropDown.add(option);
+  const option = document.createElement("option");
+  option.value = Object.values(currency);
+  option.text = Object.keys(currency)[0];
+  toDropDown.add(option);
 })
 
 //Setting default values
@@ -23,61 +24,68 @@ fromDropDown.value = "USD";
 toDropDown.value = "EUR";
 
 let convertCurrency = () => {
-    const amount = document.querySelector("#amount").value;
-    const fromCurrency = fromDropDown.value;
-    const toCurrency = toDropDown.value;
-;
+  const amount = document.querySelector("#amount").value;
+  const fromCurrency = fromDropDown.value;
+  const toCurrency = toDropDown.value;
+  ;
 
 
-if(amount.length != 0) {
+  if (amount.length != 0) {
     fetch(api).then((resp) => resp.json()).then((data) => {
-        let fromExchangeRate = data.conversion_rates[fromCurrency];
-        let toExchangeRate = data.conversion_rates[toCurrency];
-        const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
-        result.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+      let fromExchangeRate = data.conversion_rates[fromCurrency];
+      let toExchangeRate = data.conversion_rates[toCurrency];
+      const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
+      result.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
 
-  //Local Storage
+      //Local Storage
 
-  var testTransaction = {
-    amountFrom: amount,
-    currencyFrom: fromCurrency,
-    amountTo: convertedAmount,
-    currencyTo: toCurrency,
-  };
-  
-  function addLatestTransactionToLocalStorage(transaction) {
-    // Check local storage for existing data
-    var transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-    // Add the new transaction to the array
-    transactions.push(transaction);
-    // Save the updated array back to local storage
-    localStorage.setItem("transactions", JSON.stringify(transactions));
-  }
-  
-  function getLast3FromLocalStorage() {
-    // Read from local storage
-    var transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-    // Return the last 3 transactions (or all transactions if there are less than 3)
-    return console.log(transactions.slice(-3));
-  }
-  
-  addLatestTransactionToLocalStorage(testTransaction);
-  //console.log(getLast3FromLocalStorage);
-  getLast3FromLocalStorage();
+      var testTransaction = {
+        amountFrom: amount,
+        currencyFrom: fromCurrency,
+        amountTo: convertedAmount,
+        currencyTo: toCurrency,
+      };
 
-//forloop transaction[amountfrom], transaction.amountFrom
+      function addLatestTransactionToLocalStorage(transaction) {
+        var key = "transactions"
+        // Check local storage for existing data
+        var transactions = localStorage.getItem(key)
+        console.log(transactions)
+        //  Parsed data into an array 
+        var transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+        console.log(transactions)
+        // Add the new transaction to the array
+        transactions.push(transaction);
+        // Save the updated array back to local storage
+        localStorage.setItem(key, JSON.stringify(transactions));
+
+      }
+      addLatestTransactionToLocalStorage(testTransaction);
 
     });
 
+    renderLatest3Transactions()
+  }
+  function renderLatest3Transactions() {
+    var latestTransactions = JSON.parse(localStorage.getItem("transactions")) || [];
+    var latestTransactionsList = document.getElementById("conversion-container");
+    var last3Transactions = latestTransactions.slice(-3)
+    // Clears the previous content upon click
+    latestTransactionsList.innerHTML= ""
+    // Created for loop for last3Transactions 
+    for (let i=0; i<last3Transactions.length; i++) {
+      var transaction = last3Transactions[i]
+      var p = document.createElement("p")
+      // Extracted values you want to show 
+      p.textContent = `${transaction.amountFrom} ${transaction.currencyFrom} = ${transaction.amountTo.toFixed(2)} ${transaction.currencyTo}`
+      // Appended p element into the conversion-container id
+      latestTransactionsList.appendChild(p);
+    }
 
-  
-} else {
-    alert("Please fill in the amount");
+  }
+
 }
-
-};
 
 document.querySelector("#fetch-button").addEventListener("click", convertCurrency);
 window.addEventListener("load", convertCurrency);
-
 
