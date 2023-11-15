@@ -58,14 +58,23 @@ h4 {
   margin: 80px;
   font-weight: bold;
   font-size: 25px;
+  margin-right: -5px;
+
+}
+
+.listgroup { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .localstorage p {
   border: 3px solid grey;
   display: flex; 
   flex-direction: row;
-  width: 50%;
   justify-content: center;
+  width: 150%;
+  margin: 10px;
 
 }
 
