@@ -9,17 +9,23 @@ body {
     font-size: 35px;
 }
 
-/* div {
-  column-count: 2;
+/* Created flexbox for hero to center content */
+.hero-body {
   display: flex;
+  align-items: center;
   justify-content: center;
-} */
+}
+
+img {
+  width: 200px;
+  margin: 1px;
+}
 
 .column{
   border: 5px solid grey;
   display: flex;
   flex-direction: column;
-  margin: 100px;
+  margin: 80px;
 
 }
 
@@ -29,19 +35,17 @@ h4 {
   font-family: 'Papyrus';
 }
 
-.localstorage {
-  border: 3px solid grey;
-  display: flex; 
-  flex-direction: column;
-  width: 70%;
-
-}
-
+/* Put border around each column */
 .column {
   border: 3px solid grey;
   margin: 50px;
 }
 
+.result {
+  font-size: 25px;
+}
+
+/* Created flexbox for the button to center it */
 .button {
   display: flex;
   align-items: center;
@@ -49,6 +53,28 @@ h4 {
   border: none;
 }
 
-.result {
+.subtitle {
+  text-align: center;
+  margin: 80px;
+  font-weight: bold;
   font-size: 25px;
+  margin-right: -5px;
+
 }
+
+.listgroup { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.localstorage p {
+  border: 3px solid grey;
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  width: 150%;
+  margin: 10px;
+
+}
+

@@ -15,6 +15,7 @@
 <!-- Styled hero for title -->
 <header class="hero is-link">
     <div class="hero-body">
+        <img src="Travel.webp" alt="Travel Image"></img>
         <h1 class="traveltitle">
             <i>Currency Conversion for Travelers :)</i>
         </h1>
@@ -23,46 +24,36 @@
 
 
 <main>
-    <!-- Added 2 columns for CountryFrom and CountryTo -->
-    <!-- Added id for dropdown and flag -->
- 
+    <!-- Added 2 columns for currencyFrom and currencyTo with content-->
     <div class="columns dropdowns">
         <div class="column">
-            <label for="amount">Enter the Amount:</label>
-            <input type="number" id="amount" value="100" />
             <h3> Country you're currently coming from:</h3>
             <select id="from-currency-select"></select>
+            <label for="amount">Enter the Amount:</label>
+            <input type="number" id="amount" value="100" />
         </div>
 
         <div class="column">
             <h4> Country you're currently going to:</h4>
             <select id="to-currency-select"></select>
-            <p class="result" id="result"></p>
-        </div>
+            <p class=result id="result"></p>
         </div>
     </div>
+    </div>
 
+    <!-- Added button for conversion -->
     <div class="button">
-    <button type="submit" class="button is-primary is-medium" id="fetch-button">Convert</button>
+        <button type="submit" class="button is-primary is-medium" id="fetch-button">Convert</button>
     </div>
 
     <h5 class="subtitle"> Last 3 Conversions
         <!-- <span id="country-search-term"></span> -->
     </h5>
 
-    <!-- Added 2 columns for local storage -->
-    <div class="columns is-gapless">
-        <!-- Created currency container Id -->
-        <div id="curency-container" class="list-group"></div>
-        <div class="column localstorage">
-            Currency 1
-        </div>
-        <div class="column localstorage">
-            Currency 2
-        </div>
+    <div class="listgroup">
+    <!-- Created currency container Id -->
+    <div id="conversion-container" class="localstorage"></div>
     </div>
-
-
 
 </main>
 <!--Script with list of currency codes-->
