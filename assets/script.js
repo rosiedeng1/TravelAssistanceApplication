@@ -8,6 +8,9 @@ currencies_abrev.forEach((currency) => {
   const option = document.createElement("option");
   option.value = Object.values(currency);
   option.text = Object.keys(currency)[0];
+  if (option.text === "UNITED STATES OF AMERICA") {
+    option.selected = true;
+  }
   fromDropDown.add(option);
 })
 
@@ -16,12 +19,12 @@ currencies_abrev.forEach((currency) => {
   const option = document.createElement("option");
   option.value = Object.values(currency);
   option.text = Object.keys(currency)[0];
+  if (option.text === "UNITED STATES OF AMERICA") {
+    option.selected = true;
+  }
   toDropDown.add(option);
 })
 
-//Setting default values
-fromDropDown.value = "USD";
-toDropDown.value = "EUR";
 
 let convertCurrency = () => {
   const amount = document.querySelector("#amount").value;
