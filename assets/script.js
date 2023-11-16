@@ -19,7 +19,7 @@ currencies_abrev.forEach((currency) => {
   const option = document.createElement("option");
   option.value = Object.values(currency);
   option.text = Object.keys(currency)[0];
-  if (option.text === "FRANCE") {
+  if (option.text === "UNITED STATES OF AMERICA") {
     option.selected = true;
   }
   toDropDown.add(option);
