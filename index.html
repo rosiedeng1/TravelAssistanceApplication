@@ -30,7 +30,7 @@
             <h3> Country you're currently coming from:</h3>
             <select id="from-currency-select"></select>
             <label for="amount">Enter the Amount:</label>
-            <input type="number" id="amount" value="100" />
+            <input type="number" id="amount" />
         </div>
 
         <div class="column">
@@ -46,9 +46,11 @@
         <button type="submit" class="button is-primary is-medium" id="fetch-button">Convert</button>
     </div>
 
-    <h5 class="subtitle"> Last 3 Conversions
-        <!-- <span id="country-search-term"></span> -->
-    </h5>
+    <div class="container subtitle">
+        <!-- <div class="notification is-primary"> -->
+            Last 3 Conversions
+        <!-- </div> -->
+      </div>
 
     <div class="listgroup">
     <!-- Created currency container Id -->

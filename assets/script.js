@@ -73,7 +73,8 @@ let convertCurrency = () => {
   function renderLatest3Transactions() {
     var latestTransactions = JSON.parse(localStorage.getItem("transactions")) || [];
     var latestTransactionsList = document.getElementById("conversion-container");
-    var last3Transactions = latestTransactions.slice(-3)
+    var last3Transactions = latestTransactions.slice(Math.max(latestTransactions.length - 3, 0))
+    console.log(last3Transactions)
     // Clears the previous content upon click
     latestTransactionsList.innerHTML= ""
     // Created for loop for last3Transactions 
