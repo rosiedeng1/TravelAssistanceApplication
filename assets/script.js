@@ -19,7 +19,7 @@ currencies_abrev.forEach((currency) => {
   const option = document.createElement("option");
   option.value = Object.values(currency);
   option.text = Object.keys(currency)[0];
-  if (option.text === "UNITED STATES OF AMERICA") {
+  if (option.text === "FRANCE") {
     option.selected = true;
   }
   toDropDown.add(option);
@@ -38,7 +38,8 @@ let convertCurrency = () => {
       let fromExchangeRate = data.conversion_rates[fromCurrency];
       let toExchangeRate = data.conversion_rates[toCurrency];
       const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
-      result.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+      let formattedAmount = Intl.NumberFormat('en-US').format(convertedAmount);
+      result.innerHTML = `${amount} ${fromCurrency} = ${formattedAmount} ${toCurrency}`;
 
       //Local Storage
 
