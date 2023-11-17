@@ -13,6 +13,14 @@ The Currency Converter App is a user-friendly tool designed for travelers seekin
 As a frequent traveler, I want an easy-to-use currency converter application, so that I can quickly understand how much I'm spending in my home currency when I'm abroad.
 
 ## How to Use
+
+Link to live Site: https://rosiedeng1.github.io/TravelAssistanceApplication/
+
+![CurrencyConverterApplication](assets/images/CurrencyConverterApplication.png)
+![WebsiteUsage](assets/images/WebsiteUsage.png)
+
+Instructions for ![CurrencyConverterApplication]: This shows the website and it's format 
+
 1. **Open the App**: Start by launching the currency converter application.
 2. **Select Currencies**: Choose your home country's currency and the currency of the country you are visiting.
 3. **Enter Amount**: Input the amount of money you wish to convert.
@@ -24,6 +32,11 @@ As a frequent traveler, I want an easy-to-use currency converter application, so
 - JavaScript for functionality and API integration.
 - Real-time currency exchange rate API.
 - Country facts API.
+
+=Breakdown of roles: HTML, CSS, part of local storage- Rosie (Rong Si) Deng 
+Local Storage and presentation slides: Yuval Nahmias 
+Currency Converter API (Javascript): Estephany Tan 
+Country Fact API (Javascript): Tarun Para
 
 ## Challenges and Solutions
 - **Challenge**: Ensuring real-time accuracy of currency exchange rates.
@@ -42,3 +55,7 @@ As a frequent traveler, I want an easy-to-use currency converter application, so
 
 ## Conclusion
 The Currency Converter App stands out as an essential tool for travelers, offering an intuitive and reliable solution for managing financial transactions abroad. Its incorporation of real-time data and user-centric features makes it a valuable companion for both seasoned and novice travelers. With future enhancements, the app is poised to become even more versatile, further simplifying the international travel experience.
+
+## License
+
+Please refer to the LICENSE in the repo.
