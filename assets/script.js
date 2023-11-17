@@ -96,3 +96,41 @@ document
   .querySelector("#fetch-button")
   .addEventListener("click", convertCurrency);
 window.addEventListener("load", convertCurrency);
+
+const countryApiUrl = "https://api.api-ninjas.com/v1/country?name=";
+const countryApiKey = "q89lgkdr7g0Ta6sOQ0c4WRkkXrc49W8jXpF7WZUe";
+
+// Function to fetch country information
+function fetchCountryInfo(currencyCode) {
+  const countryName = currencyCode.split(" ")[0]; // Assuming country name is the first word in currencyCode
+  fetch(`${countryApiUrl}${countryName}`, {
+    headers: { 'X-Api-Key': countryApiKey }
+  })
+    .then(response => response.json())
+    .then(data => {
+      displayCountryInfo(data[0]);
+    })
+    
+}
+
+// Function to display country information
+function displayCountryInfo(countryData) {
+  const countryInfoDiv = document.getElementById("country-info");
+  countryInfoDiv.innerHTML = `
+    <p><strong>Country:</strong> ${countryData.name}</p>
+    <p><strong>Capital:</strong> ${countryData.capital}</p>
+    <p><strong>Population:</strong> ${countryData.population}</p>
+    <p><strong>Area:</strong> ${countryData.area} km²</p>`;
+}
+
+// Update event listener for currency selection
+fromDropDown.addEventListener("change", () => {
+  const selectedCurrency = fromDropDown.options[fromDropDown.selectedIndex].text;
+  fetchCountryInfo(selectedCurrency);
+});
+
+toDropDown.addEventListener("change", () => {
+  const selectedCurrency = toDropDown.options[toDropDown.selectedIndex].text;
+  fetchCountryInfo(selectedCurrency);
+});
+
