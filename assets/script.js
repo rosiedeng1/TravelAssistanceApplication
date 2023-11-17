@@ -70,6 +70,7 @@ let convertCurrency = () => {
 
     renderLatest3Transactions()
   }
+  
   function renderLatest3Transactions() {
     var latestTransactions = JSON.parse(localStorage.getItem("transactions")) || [];
     var latestTransactionsList = document.getElementById("conversion-container");
