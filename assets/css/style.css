@@ -71,3 +71,38 @@ width: 150%;
 margin: 10px;
 
 }
+
+/* Styles for Country Information Display */
+#country-info {
+  background-color: #f2f2f2; y background */
+  border-radius: 8px; 
+  padding: 15px; 
+  margin-top: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  font-family: Arial, sans-serif; 
+}
+
+#country-info p {
+  margin: 10px 0; 
+  color: #333; 
+  font-size: 16px; 
+}
+
+#country-info strong {
+  color: #2261a3; 
+  font-weight: bold; 
+}
+
+
+select {
+  border: 1px solid #ced4da; 
+  border-radius: 4px; 
+  padding: 10px 15px; 
+  margin-right: 10px; 
+}
+
+
+select:hover {
+  border-color: #80bdff; 
+  outline: none; 
+}
