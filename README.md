@@ -6,7 +6,7 @@ The Currency Converter App is a user-friendly tool designed for travelers seekin
 ## Features
 - **Easy Selection of Currencies**: Users can easily select their home country and the country they are visiting to set the currencies for conversion.
 - **Quick Conversion**: With a simple click of the "Convert" button, users get instant and accurate conversion of their entered amount.
-- **Recent Conversion History**: The app displays a table of the most recent three conversions, allowing users to track their latest transactions conveniently.
+- **Recent Conversion History**: The app displays a table of the most recent three conversions from loca storage, allowing users to track their latest transactions conveniently.
 - **Real-Time Exchange Rates**: Utilizing up-to-date exchange rate information to ensure accurate conversions.
 
 ## User Story
@@ -28,7 +28,7 @@ Instructions for ![CurrencyConverterApplication]: This shows the website and it'
 5. **View Recent Conversions**: The application displays the most recent three conversions in a dedicated table.
 
 ## Technologies Used
-- HTML, CSS for front-end design.
+- HTML, CSS for front-end design. We used Bulma as our CSS framework!
 - JavaScript for functionality and API integration.
 - Real-time currency exchange rate API.
 - Country facts API.
